@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome User</title>
+    <link rel="stylesheet" href = "{{ url_for('static',filename='/login.css') }}"/>
 </head>
-<body>
-<h1>Welcome {{ username }} !!</h1>
-</body>
+  <body>
+    <div class="bg-container">
+        <h1 class="label"> :) Welcome {{ username }} !!</h1>
+    </div>
+  </body>
 </html>

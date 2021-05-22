@@ -15,7 +15,7 @@ def set_user_cookie():
         if username==from_cookie:
             return redirect(url_for('welcome_user'))
         else:
-            res = make_response(render_template('welcome.html'))
+            res = make_response(render_template('welcome.html', user=username))
             res.set_cookie('username',username)
             return res
 
@@ -23,8 +23,8 @@ def set_user_cookie():
 @app.route('/welcome', methods = ['POST','GET'])
 def welcome_user():
     username = request.cookies.get('username')
-    return '<h1>Welcome '+username+'</h1>'
-
+    #return '<h1>Welcome '+username+'</h1>'
+    return render_template('display.html',username=username)
 
 if __name__ == '__main__':
     app.run(debug = True)
